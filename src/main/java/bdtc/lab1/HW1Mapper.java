@@ -24,12 +24,9 @@ public class HW1Mapper extends Mapper<LongWritable, Text, Text, IntWritable> {
         String  result = null;
 
         if (Pattern.matches("^\\d{1,3} \\d{1,3} \\d{5} \\d{8,10}$",line)) {
-            System.out.println("true");
             String[] ml = line.split(" ");
             X = Integer.parseInt(ml[0]);
             Y = Integer.parseInt(ml[1]);
-            System.out.println("X " + X);
-            System.out.println("Y " + Y);
             if (X >= 0 && Y>= 0 && X <= 300 && Y <= 50){
                 result = "bot";
             } else if (Y>= 50 && Y <= 150) {
